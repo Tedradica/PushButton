@@ -1,0 +1,21 @@
+import java.awt.CardLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Panel_Rank  {
+	
+	JPanel mainPanel;
+	JFrame main_frame;
+	CardLayout card;
+	
+	public Panel_Rank (JPanel mainPanel, JFrame main_frame, CardLayout card){
+		
+		this.mainPanel = mainPanel;
+		this.main_frame = main_frame;
+		this.card = card;
+		
+		
+	}
+	
+}

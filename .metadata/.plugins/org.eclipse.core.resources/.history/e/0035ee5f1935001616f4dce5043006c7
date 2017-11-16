@@ -1,0 +1,39 @@
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JFrame;
+
+public class keytest implements KeyListener {
+
+	public void createf() {
+		
+		JFrame main_frame = new JFrame("Push Button");
+		main_frame.setSize(500,600);
+		main_frame.setVisible(true);
+		main_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		main_frame.setLayout(null);
+		main_frame.addKeyListener(this);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		keytest test = new keytest();
+		test.createf();
+		
+	}
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

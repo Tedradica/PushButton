@@ -1,0 +1,45 @@
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Panel_Rank  {
+	
+	JPanel mainPanel;
+	JFrame main_frame;
+	CardLayout card;
+	JPanel panel_Rank;
+	
+	public Panel_Rank (JPanel mainPanel, JFrame main_frame, CardLayout card){
+		
+		this.mainPanel = mainPanel;
+		this.main_frame = main_frame;
+		this.card = card;
+		
+		//랭킹 패널 생성
+		panel_Rank = new JPanel();
+		panel_Rank.setLayout(null);
+		panel_Rank.setSize(500, 600);
+		panel_Rank.setBackground(Color.white);
+		mainPanel.add("rank", panel_Rank);
+		
+		//랭킹박스 라벨 생성
+		JLabel titleLabel = new JLabel();
+		titleLabel.setBounds(120, 50, 319, 72);
+		titleLabel.setIcon(new ImageIcon("img/how_to_play.jpg"));
+		panel_Rank.add(titleLabel);
+		
+		//랭킹 타이틀 라벨 생성
+		JLabel titleLabel = new JLabel();
+		titleLabel.setBounds(120, 50, 319, 72);
+		titleLabel.setIcon(new ImageIcon("img/how_to_play.jpg"));
+		panel_Rank.add(titleLabel);
+		
+		
+	}
+	
+}

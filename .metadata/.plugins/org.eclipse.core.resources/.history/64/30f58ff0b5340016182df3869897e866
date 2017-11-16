@@ -1,0 +1,53 @@
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Panel_Rank  {
+	
+	JPanel mainPanel;
+	JFrame main_frame;
+	CardLayout card;
+	JPanel panel_Rank;
+	
+	public Panel_Rank (JPanel mainPanel, JFrame main_frame, CardLayout card){
+		
+		this.mainPanel = mainPanel;
+		this.main_frame = main_frame;
+		this.card = card;
+		
+		//랭킹 패널 생성
+		panel_Rank = new JPanel();
+		panel_Rank.setLayout(null);
+		panel_Rank.setSize(500, 600);
+		panel_Rank.setBackground(Color.white);
+		mainPanel.add("rank", panel_Rank);
+		
+		//랭킹박스 라벨 생성
+		JLabel rank_Box = new JLabel();
+		rank_Box.setBounds(0, 0, 425, 340);
+		rank_Box.setIcon(new ImageIcon("img/랭킹내용.jpg"));
+		panel_Rank.add(rank_Box);
+		
+		//랭킹 타이틀 라벨 생성
+		JLabel rank_title = new JLabel();
+		rank_title.setBounds(0, 0, 313, 80);
+		rank_title.setIcon(new ImageIcon("img/랭킹.jpg"));
+		rank_Box.add(rank_title);
+		
+		//돌아가기
+		JLabel come_back_btn = new JLabel();
+		come_back_btn.setBounds(290, 490, 173, 55);
+		come_back_btn.setIcon(new ImageIcon("img/돌아가기.jpg"));
+		panel_Rank.add(come_back_btn);
+		
+		
+		
+		
+	}
+	
+}

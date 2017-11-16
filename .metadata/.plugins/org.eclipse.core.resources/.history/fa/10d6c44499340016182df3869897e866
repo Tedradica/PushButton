@@ -1,0 +1,109 @@
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Panel_Menu implements MouseListener {
+
+	public JPanel mainPanel;
+	public JPanel panel_Menu;
+	public CardLayout card;
+	
+	
+	public Panel_Menu(JPanel mainPanel, JFrame main_frame, CardLayout card) {
+		
+		this.mainPanel = mainPanel;
+		this.card = card;
+		
+		//메뉴패널 생성
+		panel_Menu = new JPanel();
+		panel_Menu.setLayout(null);
+		panel_Menu.setSize(500, 600);
+		panel_Menu.setBackground(Color.white);
+		mainPanel.add("menu", panel_Menu);
+		
+		//게임 타이틀 생성
+		JLabel titleLabel = new JLabel();
+		titleLabel.setBounds(30, 50, 425, 80);
+		titleLabel.setIcon(new ImageIcon("img/메인.jpg"));
+		panel_Menu.add(titleLabel);
+		
+		
+		//게임시작 버튼 생성
+		JLabel gameStartBtn = new JLabel();
+		gameStartBtn.setBounds(105, 230, 283, 80);
+		gameStartBtn.setIcon(new ImageIcon("img/시작하기.jpg"));
+		gameStartBtn.addMouseListener(this);
+		gameStartBtn.setName("gameStartBtn");
+		panel_Menu.add(gameStartBtn);
+		
+		//게임방법 버튼 생성
+		JLabel howToGameBtn = new JLabel();
+		howToGameBtn.setBounds(105, 330, 283, 80);
+		howToGameBtn.setIcon(new ImageIcon("img/게임방법.jpg"));
+		howToGameBtn.addMouseListener(this);
+		howToGameBtn.setName("howToGameBtn");
+		panel_Menu.add(howToGameBtn);
+		
+		//랭킹 버튼 생성
+		JLabel rankBtn = new JLabel();
+		rankBtn.setBounds(105, 430, 283, 80);
+		rankBtn.setIcon(new ImageIcon("img/랭킹보기.jpg"));
+		rankBtn.addMouseListener(this);
+		rankBtn.setName("rankBtn");
+		panel_Menu.add(rankBtn);
+		
+	}
+
+
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+		if(arg0.getComponent().getName() == "gameStartBtn") {
+			
+			System.out.println("gameStartBtn");
+			
+		} else if (arg0.getComponent().getName() == "howToGameBtn"){
+			
+			System.out.println("howToGameBtn");
+			
+		} else if (arg0.getComponent().getName() == "rankBtn"){
+			
+			System.out.println("rankBtn");
+		}
+	}
+
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+}

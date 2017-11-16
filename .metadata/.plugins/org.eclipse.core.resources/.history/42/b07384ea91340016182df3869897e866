@@ -1,0 +1,15 @@
+import javax.swing.*;
+
+public class Frame_Main {
+
+	public static void main(String[] args) {
+		
+		//메인프레임 생성 (사이즈 400, 600)
+		JFrame main_frame = new JFrame();	
+		main_frame.setSize(400,600);
+		main_frame.setVisible(true);
+		
+		
+	}
+
+}

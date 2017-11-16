@@ -1,0 +1,44 @@
+import java.awt.CardLayout;
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Panel_Level {
+	
+	public JPanel mainPanel;
+	public JPanel panel_Lavel;
+	public CardLayout card;
+	public JFrame main_frame;
+	
+	public Panel_Level(JPanel mainPanel, JFrame main_frame, CardLayout card) {
+		
+		this.mainPanel = mainPanel;
+		this.card = card;
+		this.main_frame = main_frame;
+		
+		//레벨패널 생성
+		panel_Lavel = new JPanel();
+		panel_Lavel.setSize(500, 500);
+		panel_Lavel.setLayout(null);
+		panel_Lavel.setBackground(Color.white);
+		mainPanel.add("lavel", panel_Lavel);
+		
+		//레벨박스라벨 생성
+				
+		
+		//레벨타이틀라벨 생성
+		
+		//초급버튼 생성
+		
+		//중급버튼 생성
+		
+		//고급버튼 생성
+		
+		//돌아가기 버튼
+	}
+	
+	
+}

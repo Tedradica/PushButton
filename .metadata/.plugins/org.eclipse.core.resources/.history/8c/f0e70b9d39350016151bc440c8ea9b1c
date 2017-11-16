@@ -1,0 +1,80 @@
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class PopManager implements Runnable {
+
+	JLabel[] btnList;
+	JPanel gamePanel;
+	boolean stop = false;
+	
+	public PopManager(JLabel[] btnList, JPanel gamePanel) {
+		
+		this.btnList = btnList;
+		this.gamePanel = gamePanel;
+		
+		Thread t = new Thread(this);
+		t.start();
+	}
+	
+	public void setPop(JLabel Btn, JPanel gamePanel, int btnNum) {
+		
+		new PopBtn(Btn, gamePanel, btnNum);
+	}
+	
+	public void stopGame() {
+		
+		stop = true;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		int ramdomNumOne;
+		int ramdomNumTwo;
+		int[] btnNum = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+		int temp;
+		
+		for(int i = 0; i < 100; i++) {
+			
+			for(int ran = 0; ran < (int)(Math.random() * 50) + 1; ran++) {
+				
+				ramdomNumOne = (int)(Math.random() * 9);
+				ramdomNumTwo = (int)(Math.random() * 9);
+				
+				temp = btnNum[ramdomNumOne];
+				btnNum[ramdomNumOne] = btnNum[ramdomNumTwo];
+				btnNum[ramdomNumTwo] = temp;
+			}
+			
+			for(int j = 0; j < (int)(Math.random() * 3) + 1; j++) {
+			
+				
+				setPop(btnList[btnNum[j]], gamePanel, btnNum[j]);
+			}
+			
+			if(stop) {
+				
+				break;
+			}
+			try {
+				
+				if(gamePanel.getName() == "") {
+				
+					Thread.sleep(2000);
+					
+				} else if(gamePanel.getName() == "") {
+					
+					Thread.sleep(2000);
+					
+				} else if(gamePanel.getName() == "") {
+					
+					Thread.sleep(2000);
+				}
+				
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+}

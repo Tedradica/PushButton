@@ -1,0 +1,43 @@
+import java.awt.CardLayout;
+import java.awt.Color;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Panel_Menu {
+
+	public JPanel mainPanel;
+	public JPanel panel_Menu;
+	public CardLayout card;
+	
+	
+	public Panel_Menu(JPanel mainPanel, JFrame main_frame, CardLayout card) {
+		
+		this.mainPanel = mainPanel;
+		this.card = card;
+		
+		//메뉴패널 생성
+		panel_Menu = new JPanel();
+		panel_Menu.setLayout(null);
+		panel_Menu.setSize(500, 600);
+		panel_Menu.setBackground(Color.white);
+		mainPanel.add("menu", panel_Menu);
+		
+		//게임시작 버튼 생성
+		JLabel gameStartBtn = new JLabel();
+		gameStartBtn.setBounds(105, 230, 283, 80);
+		panel_Menu.add(gameStartBtn);
+		
+		//게임방법 버튼 생성
+		JLabel howToGameBtn = new JLabel();
+		howToGameBtn.setBounds(105, 330, 283, 80);
+		panel_Menu.add(howToGameBtn);
+		
+		//랭킹 버튼 생성
+		JLabel rankBtn = new JLabel();
+		rankBtn.setBounds(105, 430, 283, 80);
+		panel_Menu.add(rankBtn);
+		
+	}
+}

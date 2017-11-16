@@ -1,0 +1,51 @@
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Panel_Level {
+	
+	public JPanel mainPanel;
+	public JPanel panel_Level;
+	public CardLayout card;
+	public JFrame main_frame;
+	
+	public Panel_Level(JPanel mainPanel, JFrame main_frame, CardLayout card) {
+		
+		this.mainPanel = mainPanel;
+		this.card = card;
+		this.main_frame = main_frame;
+		
+		//레벨패널 생성
+		panel_Level = new JPanel();
+		panel_Level.setSize(500, 500);
+		panel_Level.setLayout(null);
+		panel_Level.setBackground(Color.white);
+		mainPanel.add("lavel", panel_Level);
+		
+		//레벨박스라벨 생성
+		JLabel label_Level_Box = new JLabel();
+		label_Level_Box.setIcon(new ImageIcon("img/랭킹내용.jpg"));
+		label_Level_Box.setBounds(20, 50, 425, 340);
+		panel_Level.add(label_Level_Box);
+		
+		
+		//레벨타이틀라벨 생성
+		
+		//초급버튼 생성
+		
+		//중급버튼 생성
+		
+		//고급버튼 생성
+		
+		//돌아가기 버튼
+	}
+	
+	
+}

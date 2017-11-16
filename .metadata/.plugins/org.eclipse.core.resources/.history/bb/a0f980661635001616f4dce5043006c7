@@ -1,0 +1,79 @@
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
+public class PopBtn implements Runnable, MouseListener {
+
+	JLabel btn;
+	boolean click = false;
+	ImageIcon[] img = new ImageIcon[5];
+	ImageIcon[] clickImg = new ImageIcon[2];
+	
+	public PopBtn(JLabel btn) {
+	
+		this.btn = btn;
+		
+		img[0] = new ImageIcon("img/원1.jpg");
+		img[1] = new ImageIcon("img/원2.jpg");
+		img[2] = new ImageIcon("img/원3.jpg");
+		img[3] = new ImageIcon("img/원2.jpg");
+		img[4] = new ImageIcon("img/원1.jpg");
+		btn.addMouseListener(this);
+		
+		Thread t = new Thread(this);
+		t.start();
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+		for(int count = 0; count < 5; count++) {
+			
+			btn.setIcon(img[count]);
+			
+			if(click) {
+				for(int i = 0; i < 2; i++) {
+					
+					btn.setIcon(clickImg[i]);
+				}
+				break;
+			}
+		}
+		
+		btn.removeMouseListener(this);
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		click = true;
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}

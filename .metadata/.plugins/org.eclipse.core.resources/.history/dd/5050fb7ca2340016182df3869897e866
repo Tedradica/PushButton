@@ -1,0 +1,67 @@
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Panel_Level {
+	
+	public JPanel mainPanel;
+	public JPanel panel_Level;
+	public CardLayout card;
+	public JFrame main_frame;
+	
+	public Panel_Level(JPanel mainPanel, JFrame main_frame, CardLayout card) {
+		
+		this.mainPanel = mainPanel;
+		this.card = card;
+		this.main_frame = main_frame;
+		
+		//프레임 사이즈 변경
+		main_frame.setSize(500, 500);
+		
+		//레벨패널 생성
+		panel_Level = new JPanel();
+		panel_Level.setSize(500, 500);
+		panel_Level.setLayout(null);
+		panel_Level.setBackground(Color.white);
+		mainPanel.add("level", panel_Level);
+		
+		//레벨박스라벨 생성
+		JLabel label_Level_Box = new JLabel();
+		label_Level_Box.setIcon(new ImageIcon("img/랭킹내용.jpg"));
+		label_Level_Box.setBounds(30, 50, 425, 340);
+		panel_Level.add(label_Level_Box);
+		
+		//레벨타이틀라벨 생성	
+		JLabel label_Level_Title = new JLabel();
+		label_Level_Title.setIcon(new ImageIcon("img/레벨선택.jpg"));
+		label_Level_Title.setBounds(40, 40, 345, 84);
+		label_Level_Box.add(label_Level_Title);
+		
+		//초급버튼 생성
+		JLabel low_level = new JLabel();
+		low_level.setIcon(new ImageIcon("img/초급.jpg"));
+		low_level.setBounds(20,170,131,81);
+		label_Level_Box.add(low_level);
+		
+		//중급버튼 생성
+		JLabel mid_level = new JLabel();
+		mid_level.setIcon(new ImageIcon("img/중급.jpg"));
+		mid_level.setBounds((151),170,131,81);
+		label_Level_Box.add(mid_level);
+		
+		//고급버튼 생성
+		JLabel high_level = new JLabel();
+		high_level.setIcon(new ImageIcon("img/고급.jpg"));
+		high_level.setBounds(282,170,131,81);
+		label_Level_Box.add(high_level);
+	}
+	
+	
+}

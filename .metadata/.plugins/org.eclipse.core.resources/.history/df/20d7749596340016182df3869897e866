@@ -1,0 +1,40 @@
+import java.awt.CardLayout;
+
+import javax.swing.*;
+
+public class Frame_Main {
+
+	public static void main(String[] args) {
+		
+		CardLayout card = new CardLayout();
+		
+		//메인프레임 생성 (사이즈 400, 600)
+		JFrame main_frame = new JFrame("Push Button");
+		main_frame.setSize(500,600);
+		main_frame.setVisible(true);
+		main_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		main_frame.setLayout(null);
+		
+		//메인패널 생성
+		JPanel mainPanel = new JPanel();
+		mainPanel.setSize(400, 600);
+		mainPanel.setLayout(card);
+		main_frame.add(mainPanel);
+		
+		//메뉴패널 생성
+		new Panel_Menu(mainPanel, main_frame, card);
+		
+		//게임패널 생성
+		new Panel_Game(mainPanel, main_frame, card);
+		
+		//랭킹패널 생성
+		
+		
+		//게임방법패널 생성
+		
+		//초기화면 출력
+		card.show(mainPanel, "menu");
+		
+	}
+
+}

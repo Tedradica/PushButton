@@ -1,0 +1,15 @@
+import javax.swing.JFrame;
+
+public class keytest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		JFrame main_frame = new JFrame("Push Button");
+		main_frame.setSize(500,600);
+		main_frame.setVisible(true);
+		main_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		main_frame.setLayout(null);
+	}
+
+}

@@ -1,0 +1,154 @@
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class PopBtn implements Runnable, MouseListener, KeyListener {
+
+	JLabel btn;
+	JPanel gamePanel;
+	boolean click = false;
+	ImageIcon f_img = new ImageIcon("img/빈버튼.jpg");
+	ImageIcon[] img = new ImageIcon[5];
+	ImageIcon[] clickImg = new ImageIcon[2];
+	int btnNum;
+	
+	public PopBtn(JLabel btn, JPanel gamePanel, int btnNum) {
+	
+		this.btn = btn;
+		
+		this.gamePanel = gamePanel;
+		
+		if(btnNum == 1) {
+			this.btnNum = 7;
+		} else if(btnNum == 2) {
+			this.btnNum = 8;
+		} else if(btnNum == 3) {
+			this.btnNum = 9;
+		} else if(btnNum == 4) {
+			this.btnNum = 4;
+		} else if(btnNum == 5) {
+			this.btnNum = 5;
+		} else if(btnNum == 6) {
+			this.btnNum = 6;
+		} else if(btnNum == 7) {
+			this.btnNum = 1;
+		} else if(btnNum == 8) {
+			this.btnNum = 2;
+		} else if(btnNum == 9) {
+			this.btnNum = 3;
+		}
+		img[0] = new ImageIcon("img/원1.jpg");
+		img[1] = new ImageIcon("img/원2.jpg");
+		img[2] = new ImageIcon("img/원3.jpg");
+		img[3] = new ImageIcon("img/원2.jpg");
+		img[4] = new ImageIcon("img/원1.jpg");
+		
+		clickImg[0] = new ImageIcon("img/원_2.jpg");
+		clickImg[1] = new ImageIcon("img/원_3.jpg");
+		
+		btn.addMouseListener(this);
+		gamePanel.addKeyListener(this);
+		gamePanel.requestFocus();
+		Thread t = new Thread(this);
+		t.start();
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+		for(int count = 0; count < 5; count++) {
+			
+			btn.setIcon(img[count]);
+			
+			if(click) {
+				for(int i = 0; i < 2; i++) {
+					
+					btn.setIcon(clickImg[i]);
+					
+					try {
+						
+						Thread.sleep(150);
+						
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				break;
+			}
+			
+			try {
+				
+				Thread.sleep(150);
+				
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		btn.setIcon(f_img);
+		btn.removeMouseListener(this);
+		btn.removeKeyListener(this);
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		click = true;
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("input : " + Integer.parseInt(e.getKeyChar()+""));
+		System.out.println("num : "+btnNum);
+		if(Integer.parseInt(e.getKeyChar()+"") == btnNum) {
+			
+			click = true;
+		}
+	}
+}

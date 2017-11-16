@@ -1,0 +1,46 @@
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class PopManager implements Runnable {
+
+	JLabel[] btnList;
+	JPanel gamePanel;
+	
+	public PopManager(JLabel[] btnList, JPanel gamePanel) {
+		
+		this.btnList = btnList;
+		this.gamePanel = gamePanel;
+		
+		Thread t = new Thread(this);
+		t.start();
+	}
+	
+	public void setPop(JLabel Btn, JPanel gamePanel, int btnNum) {
+		
+		new PopBtn(Btn, gamePanel, btnNum);
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for(int i = 0; i < 100; i++) {
+			
+			//setPop(btnList[(int)(Math.random() * 9)], gamePanel, (int)(Math.random() * 9));
+			setPop(btnList[0], gamePanel, 1);
+			setPop(btnList[1], gamePanel, 2);
+			setPop(btnList[2], gamePanel, 3);
+			setPop(btnList[3], gamePanel, 4);
+			setPop(btnList[4], gamePanel, 5);
+			setPop(btnList[5], gamePanel, 6);
+			setPop(btnList[6], gamePanel, 6);
+			setPop(btnList[7], gamePanel, 7);
+			setPop(btnList[8], gamePanel, 8);
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+}

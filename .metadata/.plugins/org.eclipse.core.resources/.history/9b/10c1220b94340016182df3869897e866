@@ -1,0 +1,19 @@
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Panel_Menu {
+
+	public JPanel mainPanel;
+	public JPanel panel_Menu;
+	
+	public Panel_Menu(JPanel mainPanel, JFrame main_frame) {
+		
+		this.mainPanel = mainPanel;
+		
+		//메뉴패널 생성
+		panel_Menu = new JPanel();
+		panel_Menu.setLayout(null);
+		panel_Menu.setSize(400, 600);
+		
+	}
+}

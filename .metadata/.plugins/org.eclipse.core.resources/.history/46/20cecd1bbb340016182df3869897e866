@@ -1,0 +1,55 @@
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Panel_Game {
+
+	public JPanel mainPanel;
+	public JPanel panel_Game;
+	public CardLayout card;
+	public JFrame main_frame;
+	
+	public Panel_Game(JPanel mainPanel, JFrame main_frame, CardLayout card) {
+		
+		this.mainPanel = mainPanel;
+		this.card = card;
+		this.main_frame = main_frame;
+		
+		//게임패널 생성
+		panel_Game = new JPanel();
+		panel_Game.setLayout(null);
+		panel_Game.setSize(400, 600);
+		panel_Game.setBackground(Color.white);
+		mainPanel.add("game", panel_Game);
+		
+		//스코어박스 생성
+		JLabel score_label = new JLabel();
+		score_label.setBounds(55, 50, 266, 80);
+		score_label.setIcon(new ImageIcon("img/스코어칸.jpg"));
+		panel_Game.add(score_label);
+		
+		//스코어텍스트 생성
+		
+		JLabel score_text = new JLabel("", JLabel.RIGHT);
+		Font score_text_Font = new Font(null, 1, 25);
+		score_text.setBounds(15, 15, 236, 50);
+		score_text.setForeground(Color.BLUE);
+		score_text.setFont(score_text_Font);
+		score_label.add(score_text);
+		
+		//버튼라벨 생성
+		
+		//시작하기 버튼 생성
+		
+		//돌아가기 버튼 생성
+		
+
+	
+		
+	}
+}
